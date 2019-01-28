@@ -1,0 +1,49 @@
+nav a {
+  background-color:#1f2890;
+  display:block;
+  float:left;
+}
+
+.main_nav {
+  list-style-type: none;
+  margin: 5px;
+  padding: 0;
+  overflow: hidden;
+  background-color: #1f2890;
+}
+
+#offpage {
+  position:absolute;
+  left:-1000px;
+  top:auto;
+  width:1px;
+  height:1px;
+  overflow:hidden;
+}
+
+#offpage:focus{
+  position:static;
+  width:auto;
+  height:auto;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  border-right: 1px solid #bbb;
+}
+
+li a:hover {
+  background-color:#4c55bb;
+}
+
+li a:active {
+  background-color:#e0e422;
+}
+
+li a.current{
+  background-color:#e0e422;
+}
