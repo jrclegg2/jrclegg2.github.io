@@ -4,6 +4,15 @@ nav a {
   float:left;
 }
 
+h1 {
+  font-family: 'Major Mono Display', serif;
+  font-size:200%;
+}
+
+p {
+  font-family:'Indie Flower', serif;
+}
+
 .main_nav {
   list-style-type: none;
   margin: 5px;
@@ -47,6 +56,7 @@ li a:active {
 li a.current{
   background-color:#b4b815;
   font-style:italic;
+  color:black;
 }
 
 .home_container{
@@ -110,15 +120,54 @@ li a.current{
   display:block;
 }
 
-.experiences {
+.experiences_left {
   display:grid;
-  grid-template-columns:repeat(5, 3fr 1fr);
+  grid-template-columns:3fr 1fr;
+  padding: 10px;
+  border-style:solid;
+  border-width:3px;
+  border-color:#1f2890;
+  margin:5px;
 }
 
-.experiences > div {
-  background:#eee;
+.experiences_right {
+  display:grid;
+  grid-template-columns:1fr 3fr;
+  padding: 10px;
+  border-style:solid;
+  border-width:3px;
+  border-color:#1f2890;
+  margin:5px;
 }
 
-.experiences > div:nth-child(odd) {
-  background:#ddd;
+.experiences img {
+  height:150px;
+}
+
+.skills {
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.skills div {
+  padding: 15px;
+  border-style:solid;
+  border-width:3px;
+  border-color:#1f2890;
+  margin:5px;
+  text-align:center;
+}
+
+.skills i {
+  font-size:400%;
+}
+
+.skills h2 {
+  font-family:'Indie Flower', serif;
+  font-size:150%;
+}
+
+.gallery {
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr;
 }
