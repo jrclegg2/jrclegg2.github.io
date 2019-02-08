@@ -2,6 +2,10 @@ header, footer {
   background-color:#1f2890;
 }
 
+.home {
+  background-image:url("imgs/wolv_court.jpg");
+}
+
 h1 {
   font-family: 'Major Mono Display', serif;
   font-size:200%;
@@ -76,7 +80,15 @@ nav ul li a {
 
 .gallery {
   display:grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr;
+}
+
+.gallery img {
+  padding:5px;
+  background-size:cover;
+  width:95%;
+  max-width:1000px;
+  height:auto;
 }
 
 .experiences img {
