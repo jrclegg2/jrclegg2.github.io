@@ -1,0 +1,176 @@
+header, footer {
+  background-color:#1f2890;
+}
+
+footer p {
+  color:white;
+}
+
+.courtBackground {
+  background-image:url("../imgs/wolv_court.png");
+  background-repeat:no-repeat;
+  background-position:0% 90%;
+  background-size:cover;
+}
+
+.threebythree {
+  display:grid;
+  grid-template-columns:1fr 8fr 1fr;
+  grid-template-rows:1fr 8fr 1fr;
+  grid-template-areas:
+    ". . ."
+    ". text ."
+    ". . .";
+}
+
+.shadedbox {
+  grid-area:text;
+  background-color:white;
+  opacity:.75;
+}
+
+h1 {
+  font-family: 'Major Mono Display', serif;
+  font-size:200%;
+}
+
+p {
+  font-family:'Indie Flower', serif;
+}
+
+nav ul li{
+	border: 2px solid black;
+	min-height: 50px;
+	line-height: 50px;
+	text-align: center;
+  align-items:center;
+}
+
+nav ul li a {
+  display:block;
+  padding:10px;
+  text-align:center;
+  text-decoration:none;
+  color:white;
+}
+
+.main_nav li a:hover {
+  background-color:#4c55bb;
+}
+
+.main_nav li a:active {
+  background-color:#e0e422;
+}
+
+.main_nav li a.current{
+  background-color:#dadf0c;
+  font-style:italic;
+  color:black;
+}
+
+#offpage {
+  position:absolute;
+  left:-1000px;
+  top:auto;
+  width:1px;
+  height:1px;
+  overflow:hidden;
+}
+
+#offpage:focus{
+  position:static;
+  width:auto;
+  height:auto;
+}
+
+.skills div {
+  padding: 15px;
+  border-style:solid;
+  border-width:3px;
+  border-color:#1f2890;
+  margin:5px;
+  text-align:center;
+}
+
+.skills i {
+  font-size:400%;
+}
+
+.skills h2 {
+  font-family:'Indie Flower', serif;
+  font-size:150%;
+}
+
+.gallery {
+  display:grid;
+  grid-template-columns: 1fr;
+}
+
+.gallery img {
+  padding:5px;
+  background-size:cover;
+  width:95%;
+  max-width:1000px;
+  height:auto;
+}
+
+.experiences img {
+  height:150px;
+}
+
+.experiences_left {
+  padding: 10px;
+  border-style:solid;
+  border-width:3px;
+  border-color:#1f2890;
+  margin:5px;
+  text-align:center;
+}
+
+.experiences_right {
+  padding: 10px;
+  border-style:solid;
+  border-width:3px;
+  border-color:#1f2890;
+  margin:5px;
+  text-align:center;
+}
+
+@media screen and (min-width:776px) {
+  .skills {
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .experiences_left {
+    display:grid;
+    grid-template-columns:3fr 1fr;
+    text-align:left;
+  }
+
+  .experiences_right {
+    display:grid;
+    grid-template-columns:1fr 3fr;
+    text-align:right;
+  }
+
+  nav ul {
+    display:flex;
+    justify-content:flex-end;
+  }
+
+  nav ul li {
+    display:block;
+    min-height:25px;
+    line-height:25px;
+    border-width:2px;
+    text-align:center;
+  }
+
+  header {
+    padding:10px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+  }
+}
