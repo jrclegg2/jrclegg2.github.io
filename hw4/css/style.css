@@ -138,7 +138,7 @@ nav ul li a {
 }
 
 /* below rules only apply for screens larger than 400px (tablet displays) */
-@media screen and (min-width:425px) {
+@media screen and (min-width:450px) {
   .skills {
     display:grid;
     grid-template-columns: 1fr 1fr;
