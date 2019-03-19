@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Challenge 5</title>
+    <style>
+    body{
+        margin: 2%;
+        border: 1px solid black;
+        background-color: #b3b3b3;
+    }
+    #image{
+        line-height:325px;
+        width: 388px;
+        height: 325px;
+        border:5px solid black;
+        margin:0 auto;
+        background-repeat: no-repeat;
+        color:#FFFFFF;
+        text-align: center;
+        background-color: #8e68ff;
+        background-size: 100%;
+        margin-bottom:25px;
+        font-size:150%;
+    }
+    .preview{
+        width:10%;
+        margin-left:17%;
+        border: 10px solid black;
+    }
+    img{
+        width:95%;
+    }
+    h1{
+        text-align: center;
+    }
+    </style>
+
+    <script>
+      function upDate(previewPic) {
+        console.log(previewPic);
+        var divImg = document.querySelector("#image");
+        var URL = "url('" + previewPic.src + "')";
+        divImg.innerHTML = previewPic.alt;
+        divImg.style.backgroundImage = URL;
+      }
+      function unDo() {
+          var divImg = document.querySelector("#image");
+          divImg.innerHTML = "Hover or tab over/into an image below";
+          divImg.style.backgroundImage = 'none';
+      }
+    </script>
+</head>
+
+<body>
+    <h1>Challenge 5</h1>
+        <div id = "image">
+            Hover or tab over/into an image below.
+        </div>
+
+        <!-- Your code goes in the img tag below.  Make sure to react to "hovering" and "tabbing": -->
+        <img class = "preview"
+            onmouseover = "upDate(this);"
+            onmouseleave = "unDo();"
+            onfocus = "upDate(this);"
+            onblur = "unDo();"
+            alt = "Discy the Dog"
+            tabindex = "1"
+            src = "imgs/boa_1.JPG">
+        <!-- Your code goes in the img tag below.  Make sure to react to "hovering" and "tabbing": -->
+        <img class = "preview"
+            onmouseover = "upDate(this);"
+            onmouseleave = "unDo();"
+            onfocus = "upDate(this);"
+            onblur = "unDo();"
+            alt = "Japan wins world series"
+            tabindex = "1"
+            src = "imgs/boa_2.JPG">
+        <!-- Your code goes in the img tag below.  Make sure to react to "hovering" and "tabbing": -->
+        <img class = "preview"
+            onmouseover = "upDate(this);"
+            onmouseleave = "unDo();"
+            onfocus = "upDate(this);"
+            onblur = "unDo();"
+            alt = "Sunset at BoA"
+            tabindex = "1"
+            src = "imgs/boa_3.JPG">
+        <img class = "preview"
+            onmouseover = "upDate(this);"
+            onmouseleave = "unDo();"
+            onfocus = "upDate(this);"
+            onblur = "unDo();"
+            alt = "Opening ceremonies air guitar"
+            tabindex = "1"
+            src = "imgs/boa_4.JPG">
+        <img class = "preview"
+            onmouseover = "upDate(this);"
+            onmouseleave = "unDo();"
+            onfocus = "upDate(this);"
+            onblur = "unDo();"
+            alt = "South Korean coaches & BoA staff"
+            tabindex = "1"
+            src = "imgs/boa_5.JPG">
+        <img class = "preview"
+            onmouseover = "upDate(this);"
+            onmouseleave = "unDo();"
+            onfocus = "upDate(this);"
+            onblur = "unDo();"
+            alt = "St.Louis field opening ceremonies"
+            tabindex = "1"
+            src = "imgs/boa_6.JPG">
+</body>
+</html>
