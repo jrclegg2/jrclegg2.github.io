@@ -51,22 +51,15 @@
 				mouse_y = e.touches[0].screenY;
 				drawArc(ctx, mouse_x, mouse_y, radius, color);
 			})
-			// window.addEventListener('resize', function(e) {
-			// 	alert("resize triggered");
-			// 	var new_w = window.innerWidth;
-			// 	var new_h = window.innerHeight;
-			// 	canvas.width = new_w * .8;
-			// 	canvas.height = new_h * .8;
-			// 	clearCanvas(ctx, canvas.width, canvas.height);
-			// })
 			console.log("curr w: " + window.innerWidth + ", curr h: " + window.innerHeight)
 			window.addEventListener('resize', function(e) {
-				var new_w = window.innerWidth;
-				var new_h = window.innerHeight;
-				canvas.width = new_w * .8;
-				canvas.height = new_h * .8;
-				console.log("curr w: " + window.innerWidth + ", curr h: " + window.innerHeight);
-				clearCanvas(ctx, canvas.width, canvas.height)
+				// var new_w = window.innerWidth;
+				// var new_h = window.innerHeight;
+				// canvas.width = new_w * .8;
+				// canvas.height = new_h * .8;
+				// console.log("curr w: " + window.innerWidth + ", curr h: " + window.innerHeight);
+				// clearCanvas(ctx, canvas.width, canvas.height)
+				window.location.reload();
 			})
 			var color_picker = document.getElementById("uniqueColor");
 			color_picker.addEventListener("change", function (e) {
@@ -93,7 +86,7 @@
 	<main>
 		<canvas id="drawCanvas"></canvas><br>
 		<input type="color" id="uniqueColor" tabindex="-1">Pick Drawing Color</input>
-		<p>version 2.52</p>
+		<p>version 2.6</p>
 	</main>
 </body>
 </html>
