@@ -15,13 +15,14 @@
 			var radius = 10;
 			var color = 'red';
 			window.addEventListener('keydown', function (e) {
+				console.log(e.keyCode);
 				if (e.keyCode == 66) {
 					color = 'blue';
 				}
 				else if (e.keyCode == 71) {
 					color = 'green';
 				}
-				else if (e.KeyCode == 82) {
+				else if (e.keyCode == 82) {
 					color = 'red';
 				}
 				else if (e.keyCode == 89) {
@@ -52,6 +53,17 @@
 				mouse_y = e.touches[0].screenY;
 				drawArc(ctx, mouse_x, mouse_y, radius, color);
 			})
+			window.addEventListener('resize', function(e) {
+				var new_w = window.innerWidth;
+				var new_h = window.innerHeight;
+				canvas.width = new_w * .8;
+				canvas.height = new_h * .8;
+				clearCanvas(ctx, canvas.width, canvas.height);
+			})
+			var color_picker = document.getElementById("uniqueColor");
+			color_picker.addEventListener("change", function (e) {
+				color = color_picker.value;
+			})
 		}
 		function clearCanvas(ctx, width, height) {
 			ctx.clearRect(0, 0, width, height);
@@ -72,7 +84,7 @@
 <body onload="startCanvas();">
 	<main>
 		<canvas id="drawCanvas"></canvas>
-		<input type="color" id="uniqueColor">Pick Drawing Color</input>
+		<input type="color" id="uniqueColor" tabindex="-1">Pick Drawing Color</input>
 	</main>
 </body>
 </html>
