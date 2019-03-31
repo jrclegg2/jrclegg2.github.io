@@ -59,13 +59,13 @@
 			// 	clearCanvas(ctx, canvas.width, canvas.height);
 			// })
 			console.log("curr w: " + window.innerWidth + ", curr h: " + window.innerHeight)
-			window.addEventListener('orientationchange', function(e) {
+			window.addEventListener('resize', function(e) {
 				alert("orientation change");
-				console.log("curr w: " + window.innerWidth + ", curr h: " + window.innerHeight);
 				var new_w = window.innerWidth;
 				var new_h = window.innerHeight;
 				canvas.width = new_w * .8;
 				canvas.height = new_h * .8;
+				console.log("curr w: " + window.innerWidth + ", curr h: " + window.innerHeight);
 				clearCanvas(ctx, canvas.width, canvas.height)
 			})
 			var color_picker = document.getElementById("uniqueColor");
@@ -93,7 +93,7 @@
 	<main>
 		<canvas id="drawCanvas"></canvas><br>
 		<input type="color" id="uniqueColor" tabindex="-1">Pick Drawing Color</input>
-		<p>version 2.3</p>
+		<p>version 2.4</p>
 	</main>
 </body>
 </html>
