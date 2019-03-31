@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Java Drawing Canvas</title>
+	<script type="text/javascript">
+		function startCanvas() {
+			var canvas = document.getElementById("drawCanvas");
+			var cur_width = window.innerWidth;
+			var cur_height = window.innerHeight;
+			canvas.width = cur_width * .8;
+			canvas.height = cur_height * .8;
+			var ctx = canvas.getContext("2d");
+			canvas.style.cursor = 'none';
+			var radius = 10;
+			var color = 'red';
+			window.addEventListener('keydown', function (e) {
+				if (e.keyCode == 66) {
+					color = 'blue';
+				}
+				else if (e.keyCode == 71) {
+					color = 'green';
+				}
+				else if (e.KeyCode == 82) {
+					color = 'red';
+				}
+				else if (e.keyCode == 89) {
+					color = 'yellow'
+				}
+				else if (e.keyCode == 38) {
+					radius += 2;
+				}
+				else if (e.keyCode == 40) {
+					radius -= 2;
+					if (radius <= 4) {
+						radius = 2;
+					}
+				}
+				else if (e.keyCode == 32) {
+					console.log("Space bar pressed");
+					console.log(e.keyCode);
+					clearCanvas(ctx, canvas.width, canvas.height);
+				}
+			})
+			window.addEventListener('mousemove', function (e) {
+				mouse_x = e.pageX;
+				mouse_y = e.pageY;
+				drawArc(ctx, mouse_x, mouse_y, radius, color);
+			})
+			window.addEventListener('touchmove', function (e) {
+				mouse_x = e.touches[0].screenX;
+				mouse_y = e.touches[0].screenY;
+				drawArc(ctx, mouse_x, mouse_y, radius, color);
+			})
+		}
+		function clearCanvas(ctx, width, height) {
+			ctx.clearRect(0, 0, width, height);
+		}
+		function drawArc(ctx, x, y, radius, color) {
+			ctx.beginPath();
+			ctx.arc(x, y, radius, 0, 2 * Math.PI);
+			ctx.fillStyle = color;
+			ctx.fill();
+		}
+	</script>
+	<style>
+		#drawCanvas {
+			border:#000000 10px solid;
+		}
+	</style>
+</head>
+<body onload="startCanvas();">
+	<main>
+		<canvas id="drawCanvas"></canvas>
+		<input type="color" id="uniqueColor">Pick Drawing Color</input>
+	</main>
+</body>
+</html>
