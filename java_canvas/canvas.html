@@ -16,8 +16,12 @@
 			var radius = 10;
 			var color = 'red';
 			window.addEventListener('keydown', function (e) {
+				console.log(e.keyCode);
 				if (e.keyCode == 66) {
 					color = 'blue';
+				}
+				else if (e.keyCode == 80) {
+					color = 'pink';
 				}
 				else if (e.keyCode == 71) {
 					color = 'green';
@@ -59,6 +63,7 @@
 				// canvas.height = new_h * .8;
 				// console.log("curr w: " + window.innerWidth + ", curr h: " + window.innerHeight);
 				// clearCanvas(ctx, canvas.width, canvas.height)
+				console.log("page reload");
 				window.location.reload();
 			})
 			var color_picker = document.getElementById("uniqueColor");
