@@ -34,6 +34,68 @@
           </div>
         </div>
       </div>
+      <div class="wolv-plug">
+        <!-- <img src='imgs/wolv_group.jpg' alt = 'WOLV team in studio' height=150>
+        <img src='imgs/wolv_sendoff.jpg' alt='WOLV sends umich off to March Madness' height=150>
+        <img src='imgs/wolv_trophy.jpg' alt='WOLV winds Show of the Year 2018' height=150> -->
+        <h1>Check out our WOLV-TV experience!</h1>
+        <!-- Images used to open the lightbox -->
+        <div class="row">
+          <div class="column">
+            <img src='imgs/wolv_group.jpg' alt = 'WOLV team in studio' onclick="openModal();currentSlide(1)" class="hover-shadow">
+          </div>
+          <div class="column">
+            <img src='imgs/wolv_sendoff.jpg' alt='WOLV sends umich off to March Madness' onclick="openModal();currentSlide(2)" class="hover-shadow">
+          </div>
+          <div class="column">
+            <img src='imgs/wolv_trophy.jpg' alt='WOLV winds Show of the Year 2018' onclick="openModal();currentSlide(3)" class="hover-shadow">
+          </div>
+        </div>
+
+        <!-- The Modal/Lightbox -->
+        <div id="myModal" class="modal">
+          <span class="close cursor" onclick="closeModal()">&times;</span>
+          <div class="modal-content">
+
+            <div class="mySlides">
+              <div class="numbertext">1 / 3</div>
+              <img src='imgs/wolv_group.jpg' alt = 'WOLV team in studio'>
+            </div>
+
+            <div class="mySlides">
+              <div class="numbertext">2 / 3</div>
+              <img src='imgs/wolv_sendoff.jpg' alt='WOLV sends umich off to March Madness'>
+            </div>
+
+            <div class="mySlides">
+              <div class="numbertext">3 / 3</div>
+              <img src='imgs/wolv_trophy.jpg' alt='WOLV winds Show of the Year 2018'>
+            </div>
+
+            <!-- Next/previous controls -->
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+            <!-- Caption text -->
+            <div class="caption-container">
+              <p id="caption"></p>
+            </div>
+
+            <!-- Thumbnail image controls -->
+            <div class="column">
+              <img class="demo" src='imgs/wolv_group.jpg' alt = 'WOLV team in studio' onclick="currentSlide(1)">
+            </div>
+
+            <div class="column">
+              <img class="demo" src='imgs/wolv_sendoff.jpg' alt='WOLV sends umich off to March Madness' onclick="currentSlide(2)">
+            </div>
+
+            <div class="column">
+              <img class="demo" src='imgs/wolv_trophy.jpg' alt='WOLV winds Show of the Year 2018' onclick="currentSlide(3)">
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
     <footer>
       <p>&copy; Jack Clegg - 2019 (work in progress - last updated 1/28/2019)</p>
