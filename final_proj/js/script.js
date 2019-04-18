@@ -2,12 +2,8 @@ console.log("js opened");
 
 var navBar = document.getElementById("sticky_nav");
 var sticky = navBar.offsetTop;
-console.log("sticky " + sticky);
-console.log("pageyoffset " + window.pageYOffset);
 
 function runSticky() {
-  console.log("sticky " + sticky);
-  console.log("pageyoffset " + window.pageYOffset);
   if (window.pageYOffset > sticky) {
     navBar.classList.add("sticky");
   }
@@ -45,8 +41,36 @@ function closeModal() {
   document.getElementById('myModal').style.display = "none";
 }
 
-var slideIndex = 1;
-showSlides(slideIndex);
+var player, video, progress, progressFilled, toggle, skipper, ranges;
+// IF ON HOME PAGE, GRAB VARIABLES FOR VARIOUS ELEMENTS
+if (document.title == "Jack Clegg") {
+  console.log("home page entered");
+  var slideIndex = 1;
+  showSlides(slideIndex);
+  // FOLLOWING CODE FOR HTML5 VIDEO PLAYER
+  player = document.querySelector('.player');
+  video = player.querySelector('.player-video');
+  progress = player.querySelector('.progress');
+  progressFilled = player.querySelector('.filled-progress');
+  toggle = player.querySelector('.toggle-play');
+  skippers = player.querySelectorAll('[data-skip]');
+  ranges = player.querySelectorAll('.player-slider');
+  // event listeners
+  video.addEventListener('click', togglePlay);
+  video.addEventListener('play', updateButton);
+  video.addEventListener('pause', updateButton);
+  video.addEventListener('timeupdate', progressUpdate);
+  toggle.addEventListener('click', togglePlay);
+  skippers.forEach(button => button.addEventListener('click', skip));
+  ranges.forEach(range => range.addEventListener('change', rangeUpdate));
+  ranges.forEach(range => range.addEventListener('mousemove', rangeUpdate));
+
+  let mousedown = false;
+  progress.addEventListener('click', scrub);
+  progress.addEventListener('mousemove', e => mousedown && scrub(e));
+  progress.addEventListener('mousedown', () => mousedown = true);
+  progress.addEventListener('mouseup', () => mousedown = false);
+}
 
 // Next/previous controls
 function plusSlides(n) {
@@ -75,15 +99,6 @@ function showSlides(n) {
   dots[slideIndex-1].className += " active";
   captionText.innerHTML = dots[slideIndex-1].alt;
 }
-
-// FOLLOWING CODE FOR HTML5 VIDEO PLAYER
-const player = document.querySelector('.player');
-const video = player.querySelector('.player-video');
-const progress = player.querySelector('.progress');
-const progressFilled = player.querySelector('.filled-progress');
-const toggle = player.querySelector('.toggle-play');
-const skippers = player.querySelectorAll('[data-skip]');
-const ranges = player.querySelectorAll('.player-slider');
 
 // Logic
 function togglePlay() {
@@ -119,20 +134,23 @@ function scrub(e) {
   video.currentTime = scrubTime;
 }
 
-// Event listeners
+// navBar.classList.add("sticky");
+// var hidden_nav = document.getElementById("hidden");
 
-video.addEventListener('click', togglePlay);
-video.addEventListener('play', updateButton);
-video.addEventListener('pause', updateButton);
-video.addEventListener('timeupdate', progressUpdate);
-
-toggle.addEventListener('click', togglePlay);
-skippers.forEach(button => button.addEventListener('click', skip));
-ranges.forEach(range => range.addEventListener('change', rangeUpdate));
-ranges.forEach(range => range.addEventListener('mousemove', rangeUpdate));
-
-let mousedown = false;
-progress.addEventListener('click', scrub);
-progress.addEventListener('mousemove', e => mousedown && scrub(e));
-progress.addEventListener('mousedown', () => mousedown = true);
-progress.addEventListener('mouseup', () => mousedown = false);
+var nav_shown = false;
+function changeMenu() {
+  var hidden_links = document.getElementsByClassName("alive");
+  var len = hidden_links.length;
+  if (nav_shown) {
+    for (i = len - 1; i >= 0; i--) {
+      hidden_links[i].classList = "alive hidden";
+    }
+    nav_shown = false;
+  }
+  else {
+    for (i = len - 1; i >= 0; i--) {
+      hidden_links[i].classList = "alive";
+    }
+    nav_shown = true;
+  }
+}

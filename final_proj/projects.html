@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="css/html5reset.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Indie+Flower">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Major+Mono+Display">
+    <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville|Playfair+Display" rel="stylesheet">
     <title>Jack Clegg-Skills</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
   </head>
@@ -16,11 +15,16 @@
       <div id="sticky_nav">
         <nav>
           <ul class="main_nav">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="experiences.html">Experiences</a></li>
-            <li><a class = 'current' href="projects.html">Skills</a></li>
-            <li><a href="gallery.html">Gallery</a></li>
-            <li><a href="contact.html">Contact Me</a></li>
+            <li>
+              <a href="javascript:void(0);" class="icon" onclick="changeMenu()">
+                <i class="fas fa-bars"></i>
+              </a>
+            </li>
+            <li class='alive hidden'><a href="index.html">Home</a></li>
+            <li class='alive hidden'><a href="experiences.html">Experiences</a></li>
+            <li class='alive hidden'><a class='current' href="projects.html">Skills</a></li>
+            <li class='alive hidden'><a href="gallery.html">Gallery</a></li>
+            <li class='alive hidden'><a href="contact.html">Contact Me</a></li>
           </ul>
         </nav>
       </div>
