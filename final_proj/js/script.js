@@ -107,7 +107,17 @@ function togglePlay() {
     playing = false;
   }
   else {
-    video.play();
+    var playPromise = video.play();
+    if (playPromise !== undefined) {
+      playPromise.then(_ => {
+        console.log("successfully playing");
+        video.play();
+      })
+      .catch(error => {
+        console.log("caught error");
+        video.pause();
+      });
+    }
     playing = true;
   }
   // const playState = video.paused ? 'play' : 'pause';
