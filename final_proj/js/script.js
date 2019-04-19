@@ -115,7 +115,7 @@ function togglePlay() {
       })
       .catch(error => {
         console.log("caught error");
-        video.pause();
+        video.play();
       });
     }
     playing = true;
