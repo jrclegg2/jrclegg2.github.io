@@ -121,10 +121,8 @@
           </div>
 
           <div class="sliders">
-            <label for="volume" class="hidden-label">Volume slide</label>
-            <input type="range" name="volume" class="player-slider" min="0" max="1" step="0.05" value="1">
-            <label for="playbackRate" class="hidden-label">Player slide</label>
-            <input type="range" name="playbackRate" class="player-slider" min="0.5" max="2" step="0.1" value="1">
+            <input type="range" aria-label="volume" name="volume" class="player-slider" min="0" max="1" step="0.05" value="1">
+            <input type="range" aria-label="player" name="playbackRate" class="player-slider" min="0.5" max="2" step="0.1" value="1">
           </div>
 
           <button data-skip="-10" class="player-btn">« 10s</button>
