@@ -149,7 +149,7 @@ function progressUpdate() {
 
 function scrub(e) {
   const scrubTime = e.offsetX / progress.offsetWidth * video.duration;
-  video.currentTime = scrubTime;
+  video.currentTime = parseFloat(scrubTime);
 }
 
 // navBar.classList.add("sticky");
