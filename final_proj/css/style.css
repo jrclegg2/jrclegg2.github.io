@@ -29,6 +29,10 @@ footer p {
     ". . .";
 }
 
+.hidden-label {
+  display:none;
+}
+
 .shadedbox {
   grid-area:text;
   background-color:white;
