@@ -100,13 +100,18 @@ function showSlides(n) {
   captionText.innerHTML = dots[slideIndex-1].alt;
 }
 
-// Logic
+var playing = false;
 function togglePlay() {
-  const playState = video.paused ? 'play' : 'pause';
-  var promise = video[playState](); // Call play or paused method
-  if (promise) {
-    promise.catch(function(error) {video[playState](); });
+  if (playing) {
+    video.pause();
+    playing = false;
   }
+  else {
+    video.play();
+    playing = true;
+  }
+  // const playState = video.paused ? 'play' : 'pause';
+  // video[playState](); // Call play or paused method
 }
 
 function updateButton() {
