@@ -103,7 +103,10 @@ function showSlides(n) {
 // Logic
 function togglePlay() {
   const playState = video.paused ? 'play' : 'pause';
-  video[playState](); // Call play or paused method
+  var promise = video[playState](); // Call play or paused method
+  if (promise) {
+    promise.catch(function(error) {video[playState](); });
+  }
 }
 
 function updateButton() {
