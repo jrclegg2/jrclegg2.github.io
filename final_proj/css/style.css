@@ -12,11 +12,15 @@ footer p {
   color:white;
 }
 
-.courtBackground {
+/* .courtBackground {
   background:url("../imgs/wolv_court.png");
   background-repeat:no-repeat;
   background-position:0% 90%;
   background-size:cover;
+} */
+
+.courtBackground {
+  background-color:#1f2890;
 }
 
 .threebythree {
